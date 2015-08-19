@@ -1,0 +1,17 @@
+#ignore build files
+bin/
+obj/
+*.dll
+*.log
+*.dbmdl
+
+#ignore nuget packages, nuget will restore per user on build
+packages/
+
+#ignore user settings files from visual studio
+*.suo
+*.user
+
+#ignore files created by merge tools
+*.orig
+

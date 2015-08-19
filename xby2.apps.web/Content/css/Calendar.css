@@ -1,0 +1,172 @@
+﻿#calendar_header {
+    background-color: #F89829;
+    height: 35px;
+    color: white;
+    text-align: center;
+}
+    #calendar_header > span {
+        text-decoration: none;
+        font-size: 25px;
+        padding: 10px;
+        margin: 0 auto;
+    }
+    #calendar_header > select {
+        float: right;
+        height: 100%;
+    }
+
+.calendar-arrows {
+    cursor: pointer;
+    cursor: hand;
+}
+
+#hour_totals {
+    width: 100%;
+    text-align: center;
+    height: 90px;
+}
+
+.hours {
+    color: #F89829;
+    font-size: 45px;
+    padding-left: 20px;
+}
+.hour-label {
+    color: #8F8F94;
+    font-weight: bold;
+}
+
+.calendar {
+    width: 100%;
+    table-layout: fixed;
+}
+
+    .calendar thead tr {
+        background-color: #F9E3C9;
+        height: 40px;
+        font-size: 25px;
+    }
+    .calendar th {
+        color: #F89829;
+        text-align: center;
+    }
+    .calendar tbody tr, .calendar td {
+        border: 1px solid #F2BC41;
+        text-align: center;
+        vertical-align: top;
+    }
+    .calendar td {
+        height: 115px; /*Each cell can fit three full activities before requiring an ellipsis */
+    }
+
+    /* day of the month on calendar */
+    .calendar td span:first-child {
+        font-weight: bold;
+        font-size: 11px;
+        color: #8F8F94;
+    }
+    .calendar div {
+        width: 100%;
+    }
+
+
+    /* Entire row expands when hovering over it, if one cell in the row can be expanded */
+    .calendar tbody tr:hover .month-calendar-activities {
+        max-height: 800px;
+        transition: max-height 2s;
+    }
+
+    .calendar tbody tr:hover .ellipsis {
+        display: none; /*remove ellipsis when hovering over table row */
+    }
+
+#week_view_calendar {
+    height: 100%; /* table cells in week view go down to bottom of page */
+}
+
+.day-in-month {
+    
+}
+
+.day-not-in-month {
+    background-color: gainsboro;
+}
+
+.ellipsis {
+    color: #F89829;
+    font-weight: bold;
+}
+
+.not-entered {
+    margin-top: 25px; /*center in cell*/
+    font-size: 15px;
+    padding-top: 6px;
+    color: #8F8F94;
+    font-size: 12px;
+    vertical-align: bottom;
+}
+    /* Border around the "Not Entered" words */
+    .not-entered:before, .not-entered:after {
+        content: "...."; /* The border */
+        font-size: 18px;
+        margin-left: 1px;
+        margin-right: 1px;
+        letter-spacing: 2px;
+    }
+
+
+.month-calendar-activities {
+    height: auto;
+    max-height: 90px;
+    overflow: hidden;
+    transition: max-height 1s;
+}
+
+.week-calendar-activities {
+    height: 100%; /* table cells in week view go down to bottom of page */
+}
+
+/* Clock icon on the activities */
+.fa-clock-o {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.billable-activity, .nonbillable-activity{
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+    width: 100%;
+}
+    /* activity label */
+    .billable-activity span:first-of-type, .nonbillable-activity span:first-of-type{
+        display: inline-block;
+        width: 65%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 14px;
+        vertical-align: middle;
+    }
+
+.billable-activity {
+    background-color: #F89829;
+}
+
+.nonbillable-activity {
+    background-color: #F1D8BC;
+    opacity: 0.8;
+}
+
+.delete-button {
+    font-weight: bold;
+    cursor: pointer;
+    float: right;
+    margin-right: 3px;
+    vertical-align: middle;
+}
+
+    .delete-button:hover {
+        color: black;
+    }

@@ -1,0 +1,159 @@
+﻿body {
+    height: 100%;
+    position: relative;
+}
+
+/*Page headers such as Task Tracking or Vacation*/
+h1 {
+    color: #F89829;
+    font-weight: 600;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 400px;
+}
+
+input, select {
+    border-top: none;
+    border-bottom: 1px solid #8f8f94;
+    border-right: none;
+    border-left: none;
+    color: #F89829;
+    display: inline-block;
+}
+
+textarea {
+    display: inline-block;
+    vertical-align: initial;
+    color: #F89829;
+}
+
+input:focus, select:focus {
+    outline: 0;
+}
+
+label {
+    color: #8f8f94;
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: 600;
+}
+
+form, .form {
+    position: relative;
+    font-size: 16px;
+    color: black;
+    line-height: 16px;
+}
+
+    /*row*/
+    form > div, .form > div {
+        margin: 20px;
+        position: relative;
+    }
+
+        /*column*/
+        form > div > span, .form > div > span {
+            padding-left: 5px;
+            display: inline-block;
+            width: 49%;
+            position: relative;
+        }
+
+            form > div > span > input, form > div > span > select, .form > div > span > input, .form > div > span > select {
+                position: relative;
+                width: 100%;
+                padding-top: 8px;
+            }
+
+            form > div > span > label, .form > div > span > label {
+                position: relative;
+                display: block;
+            }
+
+/*Loading icon*/
+.loading {
+    background-color: #333;
+    opacity: 0.8;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    background-image: url(../../AngularApp/assets/img/cool-loading-animated-gif-3.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*Define relative parent for error box */
+.error {
+    position: absolute;
+    z-index: 1000;
+}
+
+.error > i {
+    color: red;
+    position: absolute;
+    padding-top: 13px;
+}
+
+input:focus ~ .error i {
+    display: none;
+}
+
+input:not(:focus) ~ .error i {
+    display: inline-block
+}
+
+.error > span {
+    display: none;
+    width: 500px;
+    position: absolute;
+    margin: 15px;
+    margin-top: 0;
+}
+
+/*Show floating error*/
+input:focus ~ .error > span {
+    display: inline-block;
+}
+
+/*Floating error*/
+.error > span > span {
+    color: red;
+    line-height: 50px;
+    font-weight: bold;
+    top: 0px;
+    left: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left: 10px solid red;
+    background-color: #f7f6f6;
+    display: inline-block;
+    height: 50px;
+    min-width: 50px;
+    -webkit-box-shadow: 15px 6px 20px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 15px 6px 20px -4px rgba(0, 0, 0, 0.75);
+    box-shadow: 15px 6px 20px -4px rgba(0, 0, 0, 0.75);
+}

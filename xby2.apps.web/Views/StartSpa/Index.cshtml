@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Start Single Page Application";
+}
+
+<head>
+    <title>X by 2 Apps</title>
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/require")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/ckeditor")
+</head>
+
+<body>
+<div class="header">
+</div>
+<div class="not-header">
+    <ul class="nav">
+        <li><img src="~/AngularApp/assets/img/X-by-2-Logo.png" alt="X By 2"/> </li>
+        <li><a id="task_tracking_link" href="#/TaskTracking">
+                <i class="fa fa-calendar fa-2x"></i>
+                Task Tracking
+            </a>
+        </li>
+        <li>
+            <a id="admin_link" href="#/Admin">
+                <i class="fa fa-cog fa-2x"></i>
+                Admin
+            </a>
+        </li>
+        <li>
+            <a id="vacation_link" href="#/Vacation">
+                <i class="fa fa-plane fa-2x"></i>
+                Vacation
+            </a>
+        </li>
+        <li>
+            <a id="points_link" href="#/Points">
+                <span class="fa-stack">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-star fa-stack-1x fa-inverse"></i>
+                </span>
+                Points
+            </a>
+        </li>
+    </ul>
+    <div class="content" ng-view></div>
+</div>
+</body>

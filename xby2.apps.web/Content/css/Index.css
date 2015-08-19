@@ -1,0 +1,80 @@
+﻿.header {
+    position: relative;    
+    background-color: #F89829;
+    height: 50px;
+    width: 100%;
+    z-index: 500;
+}
+
+.not-header {
+    position: relative;
+    width: 1200px;
+    min-height: 95%;
+    margin: 0 auto;
+    min-height: 95%;
+    -webkit-box-shadow: 0px 0px 300px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 300px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 300px 0px rgba(0,0,0,0.75);
+}
+
+.nav {
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #f7f6f6;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 23px;
+    line-height: 23px;
+}
+
+.nav li:first-child {
+    padding-bottom: 50px;
+}
+
+.nav li {
+    padding-top: 30px;
+    cursor: pointer;
+}
+
+.nav li a {
+    color: #8f8f94;
+    background: none;
+}
+
+/*for the points icons (circle and star) */
+.nav li a .fa-stack {
+    position: static;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* for the task tracking, admin, and vacation icons */
+.nav li a > i {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.nav li > a:hover {
+    background-color: #f7f6f6;
+    color: #F89829;
+}
+
+.nav li > a:focus {
+    background: none; /* Remove grey background from clicking on a link */
+}
+
+/* icon of current page being displayed */
+.nav li a.current {
+    color: #F89829;
+}
+
+
+.content {
+    width: 80%;
+    padding: 2%;
+    margin: 0;
+    margin-left: auto;
+}

@@ -1,0 +1,112 @@
+﻿#Activity.modal {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#Activity .modal-dialog {
+    margin: 0;
+    margin-top: 5%;
+}
+
+#Activity .modal-content {
+    margin: 0 auto;
+    width: 1000px;
+} 
+
+#Activity .modal-title {
+    font-size: 30px;
+    color: #F89829;
+    font-weight: 600;
+}
+
+/*Show floating error always for ckeditor*/
+#Activity [name="Description"] + span[class*="cke"] ~ .error > span {
+    display: inline-block;
+}
+
+#Activity .modal-body {
+    margin: initial;
+}
+
+/* time puts Hours, Minutes, and Billable all go in one row*/
+#Activity div.time > span {
+    width: 20%;
+    margin-right: 10%;
+}
+
+/* leave room for error */
+#Activity div.time > span > input {
+    width: 95%;
+}
+
+/* createTask div looks slightly different than normal divs*/
+#Activity .createTask {
+    min-height: 80px;
+    border: 10px solid #F9E3C9;
+    padding: 10px;
+}
+
+#Activity .createTask > h4 {
+    display: block;    
+    color: #8f8f94;
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: 600;
+}
+
+#Activity .createTask > span {
+    vertical-align: top;
+}
+
+#Activity .createTask input {
+    width: 90%;
+}
+
+#Activity .createTask span textarea {
+    border: solid 1px;
+    width: 100%;
+    height: 80px;
+}
+
+#Activity .createTask span textarea:focus {
+    outline: 0;
+}
+
+#Activity .form > div > span .fa-plus-circle {
+    color: #F89829;
+    font-size: 25px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+#Activity .fa-caret-right {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* remove default radio button and make it more like a button */
+#Activity .radio-label-button {
+    color: #8f8f94;
+    background-color: #f7f6f6;
+    
+    /*Use as a place holder when we change the color later*/
+    border: 3px solid #FFF;
+
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    
+    padding: 5px;
+    
+    cursor: pointer;
+}
+
+#Activity input[type=radio]:checked + .radio-label-button {
+    border: 3px solid #F89829;
+    color: #F89829;
+}
+
+#Activity input[type=radio] {
+    display: none;
+}
+
