@@ -1,6 +1,28 @@
-﻿<ul>
-    <li ng-repeat="phone in phones">
-        <span><a href="#homeDetail/{{phone.name}}">{{phone.name}}</a></span>
-        <p>{{phone.snippet}}</p>
-    </li>
-</ul>
+﻿<h1>X By 2 Regex Regular Expression Contest Website!</h1>
+
+<p>Welcome to the X By 2 Regular Expression Contest Website.  Here, you will be presented with
+    sets of data that will require a regular expression to solve.</p>
+
+<h2>Question #:</h2>
+
+<!-- Text to get data from -->
+<textarea id="problemDataTextArea" disabled>{{problemData}}</textarea>
+ 
+<div id="regexInput" style="text-align: center">
+    <span>Regex Input</span>
+    <input ng-change="regexChange()" ng-model="regex" />
+</div>
+
+
+<div id="filteredText" style="width: 50%; float: left">
+    <h3>Filtered Text</h3>
+    <textarea id="filteredTextArea" disabled>{{filteredResults}}</textarea>
+</div>
+
+<div id="goalText" style="width: 50%; float: right">
+    <h3>Goal Text</h3>
+    <textarea id="answersTextArea" disabled>{{answers}}</textarea>
+</div>
+
+<button class="span4" ng-disabled="1">Next</button>
+
