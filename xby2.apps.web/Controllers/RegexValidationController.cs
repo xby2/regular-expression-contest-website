@@ -1,5 +1,6 @@
 ﻿using BusinessServices.Contract;
 using System.Web.Http;
+using Models;
 
 namespace xby2.apps.web.Controllers
 {
