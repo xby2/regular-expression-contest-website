@@ -54,6 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contract\IRegexPuzzleService.cs" />
+    <Compile Include="RegexPuzzleService.cs" />
     <Compile Include="ExampleService.cs" />
     <Compile Include="Contract\IExampleService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

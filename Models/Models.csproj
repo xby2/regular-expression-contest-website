@@ -63,6 +63,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PuzzleResult.cs" />
+    <Compile Include="Answer.cs" />
+    <Compile Include="Puzzle.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\EntityFrameworkExtensions.cs" />
