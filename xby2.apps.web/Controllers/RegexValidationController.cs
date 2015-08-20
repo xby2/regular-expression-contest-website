@@ -1,9 +1,15 @@
-﻿using Models;
-using BusinessServices.Contract;
+﻿using BusinessServices.Contract;
 using System.Web.Http;
 
 namespace xby2.apps.web.Controllers
 {
+
+    public class PuzzlesAnswers
+    {
+        public Answer[] Answers;
+        public Puzzle[] Puzzles;
+    }
+
     public class RegexValidationController : ApiController { 
     
 
