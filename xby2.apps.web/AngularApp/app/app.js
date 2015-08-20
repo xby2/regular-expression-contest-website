@@ -4,6 +4,7 @@ define([
         "angular-route",
         "componentsPath/home/homeController",
         "componentsPath/home/homeDetailController",
+        "componentsPath/home/sampleController",
         "app/shared/ckEditor"
     ],
     function(
@@ -11,6 +12,7 @@ define([
         angularRoute,
         homeController,
         homeDetailController,
+        sampleController,
         ckEditor) {
 
         var myApp = angular.module("myApp", ["ngRoute"]);
@@ -38,6 +40,10 @@ define([
                         templateUrl: "AngularApp/app/components/home/homeDetailView.html",
                         controller: "homeDetailController"
                     }).
+                    when("/sample", {
+                        templateUrl: "AngularApp/app/components/home/SampleView.html",
+                        controller: "sampleController"
+                    }).
                     otherwise({
                         redirectTo: "/home"
                     });
@@ -47,6 +53,7 @@ define([
         //Sets the controllers for this module 
         myApp.controller("homeController", homeController)
             .controller("homeDetailController", homeDetailController)
+            .controller("sampleController", sampleController)
 
         //Returning myApp allows us to access this module outside this file, i.e. in RequireConfig.js
         return myApp;

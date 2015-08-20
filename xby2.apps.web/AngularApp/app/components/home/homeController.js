@@ -6,20 +6,24 @@ define(["angular",
     function (angular, moment, lodash, testRepo, activityRepo, projectRepo) {
 
     var homeController = function ($scope) {
-        $scope.phones = [
-            {
-                'name': "Nexus S",
-                'snippet': "Fast just got faster with Nexus S."
-            },
-            {
-                'name': "Motorola XOOM™ with Wi-Fi",
-                'snippet': "The Next, Next Generation tablet."
-            },
-            {
-                'name': "MOTOROLA XOOM™",
-                'snippet': "The Next, Next Generation tablet."
-            }
-        ];
+        $scope.problemData = "Star Wars\n" +
+            "Star Wars Episode V\n" +
+            "Star Wars Episode VI\n" +
+            "Star Wars Episode I\n" +
+            "Star Wars Episode II\n" +
+            "Star Wars Episode III";
+
+        $scope.answers = "Star Wars Episode I\n" +
+            "Star Wars Episode II\n" +
+            "Star Wars Episode III";
+
+        $scope.filteredResults = "";
+
+        $scope.regex = "";
+
+        $scope.regexChange = function () {
+            alert('hello world');
+        };
     };
     return homeController;
 });
