@@ -207,6 +207,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\StartSpaController.cs" />
+    <Compile Include="Controllers\RegexValidationController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -226,6 +227,7 @@
     <Content Include="AngularApp\assets\img\X-by-2-Logo.png" />
     <Content Include="AngularApp\Repository\BaseRepository.js" />
     <Content Include="AngularApp\Repository\testRepository.js" />
+    <Content Include="AngularApp\Repository\regexValidationRepository.js" />
     <Content Include="Content\css\AddEditActivityModal.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
