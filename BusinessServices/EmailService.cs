@@ -7,18 +7,26 @@ namespace BusinessServices
 {
     public class EmailService : IEmailService
     {
+        /// <summary>
+        /// Send email using mail.xby2.com smtp server.
+        /// </summary>
+        /// <param name="to">Email address that you are sending the message to.</param>
+        /// <param name="from">This value is not necessary, it is hard coded to contest@xby2.com.</param>
+        /// <param name="subject">Subject line of email.</param>
+        /// <param name="body">Body text of email.</param>
+        /// <returns>True if sending the email succeeds, false if it fails. Currently no way to retrieve error message.</returns>
         public bool SendEmail(string to, string from, string subject, string body)
         {
             var message = new MailMessage();
 
             // Who we are sending to
-            message.To.Add(@"mhussain@xby2.com");
+            message.To.Add(to);
 
-            message.From = new MailAddress(@"<USERNAME>@xby2.com");
+            message.From = new MailAddress(@"contest@xby2.com");
 
 
-            message.Subject = @"You're not actually that cool.";
-            message.Body = @"Click this: http://bit.ly/IqT6zt.";
+            message.Subject = subject;
+            message.Body = body;
 
 
             // Need credentials to send from xby2 domain
