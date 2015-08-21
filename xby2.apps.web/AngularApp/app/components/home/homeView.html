@@ -1,4 +1,11 @@
-﻿<h1>X By 2 Regular Expression Contest</h1>
+﻿<div class="progress">
+    <div class="progress-bar" ng-style="setProgressBarWidth()">
+        <span ng-show="progress > 0">{{progress + "%"}}</span>
+    </div>
+</div>
+
+
+<h1>X By 2 Regular Expression Contest</h1>
 
 <p>Welcome, you will be presented with sets of data that will require a regular expression to
     filter the text to match the goal text.  Once the regular expression filters the problem
@@ -22,5 +29,5 @@
     <p>Goal Text</p>
     <textarea id="answersTextArea" disabled>{{answers}}</textarea>
 </div>
-<button ng-disabled="nextButtonDisabled">Next</button>
+<button ng-disabled="nextButtonDisabled" ng-click="updateProgress()">Next</button>
 
