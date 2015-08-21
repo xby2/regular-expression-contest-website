@@ -25,11 +25,11 @@ define(["angular",
 
         $scope.filteredResults = $scope.problemData;
 
-        $scope.regex;
+        $scope.regex="";
         
-        var regexInternal = new RegExp($scope.regex);
         $scope.regexChange = function () {
-            $scope.filteredResults =$scope.problemData.replace(regexInternal);
+            var regexInternal = new RegExp($scope.regex, 'g');
+            $scope.filteredResults = $scope.problemData.match(regexInternal).toString().replace(/,/g, "\n");
             $scope.filteredResults == $scope.answers ? $scope.nextButtonDisabled = 0 : $scope.nextButtonDisabled = 1;
         };
 
