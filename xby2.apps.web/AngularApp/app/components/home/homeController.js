@@ -40,16 +40,17 @@ define(["angular",
             }
         };
 
-        $scope.problemData = "";
+        $scope.problemData = "Star Wars\nStar Wars Episode V\nStar Wars Episode I\nStar Wars Episode II\nStar Wars Episode II\nStar Wars Episode III";
 
-        $scope.answers = "A";
+        $scope.answers = "Star Wars Episode I\nStar Wars Episode II\nStar Wars Episode III";
 
         $scope.filteredResults = $scope.problemData;
 
-        $scope.regex = "";
-
+        $scope.regex;
+        
+        var regexInternal = new RegExp($scope.regex);
         $scope.regexChange = function () {
-            $scope.filteredResults = $scope.problemData + $scope.regex;
+            $scope.filteredResults =$scope.problemData.replace(regexInternal);
             $scope.filteredResults == $scope.answers ? $scope.nextButtonDisabled = 0 : $scope.nextButtonDisabled = 1;
         };
 
