@@ -3,24 +3,22 @@
 <p>Welcome, you will be presented with sets of data that will require a regular expression to filter the text to match the goal text.</p>
 
 <h2>Question {{problemMetadata.number}}</h2>
+<p>Problem Difficulty: {{problemMetadata.difficulty}} of 10</p>
+<p>Title: {{problemMetadata.title}}</p>
 
 <textarea id="problemDataTextArea" disabled>{{problemData}}</textarea>
  
-<div id="regexInput" style="text-align: center">
+<div id="regexInput">
     <span>Regex Input</span>
     <input ng-change="regexChange()" ng-model="regex" />
 </div>
-
-
-<div id="filteredText" class="span6" style="border:5px solid black">
-    <h3>Filtered Text</h3>
+<div id="filteredText">
+    <p>Filtered Text</p>
     <textarea id="filteredTextArea">{{filteredResults}}</textarea>
 </div>
-
-<div id="goalText"  class="span6" style="border:5px solid black">
-    <h3>Goal Text</h3>
+<div id="goalText">
+    <p>Goal Text</p>
     <textarea id="answersTextArea" disabled>{{answers}}</textarea>
 </div>
-
-<button class="span4" ng-disabled={{nextButtonDisabled}}>Next</button>
+<button ng-disabled="nextButtonDisabled">Next</button>
 
