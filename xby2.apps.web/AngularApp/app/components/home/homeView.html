@@ -3,8 +3,6 @@
 <p>Welcome, you will be presented with sets of data that will require a regular expression to filter the text to match the goal text.</p>
 
 <h2>Question {{problemMetadata.number}}</h2>
-<p>Problem Difficulty: {{problemMetadata.difficulty}} of 10</p>
-<p>Title: {{problemMetadata.title}}</p>
 
 <textarea id="problemDataTextArea" disabled>{{problemData}}</textarea>
  
@@ -14,7 +12,7 @@
 </div>
 <div id="filteredText">
     <p>Filtered Text</p>
-    <textarea id="filteredTextArea">{{filteredResults}}</textarea>
+    <textarea id="filteredTextArea" disabled>{{filteredResults}}</textarea>
 </div>
 <div id="goalText">
     <p>Goal Text</p>
