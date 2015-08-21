@@ -19,6 +19,27 @@ define(["angular",
             }
         }
         */
+
+        $scope.progress = 0;
+
+        //Sets the width of the progress bar
+        $scope.setProgressBarWidth = function() {
+            return {
+                "width": $scope.progress + "%"
+            };
+        };
+
+        $scope.updateProgress = function() {
+            if ($scope.progress < 100) {
+                //TODO: This number will be changed when we know the number of REGEX puzzles
+                $scope.progress += 10;
+                $scope.nextButtonDisabled = 1;
+            }
+            if ($scope.progress >= 100) {
+                //repository call
+            }
+        };
+
         $scope.problemData = "Star Wars\nStar Wars Episode V\nStar Wars Episode I\nStar Wars Episode II\nStar Wars Episode II\nStar Wars Episode III";
 
         $scope.answers = "Star Wars Episode I\nStar Wars Episode II\nStar Wars Episode III";

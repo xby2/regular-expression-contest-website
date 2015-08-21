@@ -50,6 +50,12 @@ input:focus, select:focus {
     outline: 0;
 }
 
+/*Change some style in bootstrap's progress bar'*/
+.progress-bar {
+    background: #F89829;
+    font-size: 15px;
+}
+
 label {
     color: #8f8f94;
     font-size: 25px;
