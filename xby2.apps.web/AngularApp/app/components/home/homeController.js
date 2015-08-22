@@ -40,7 +40,7 @@ define(["angular",
             }
         };
 
-        $scope.problemData = "Star Wars\nStar Wars Episode V\nStar Wars Episode I\nStar Wars Episode II\nStar Wars Episode II\nStar Wars Episode III";
+        $scope.problemData = "Star Wars\nStar Wars Episode V\nStar Wars Episode VI\nStar Wars Episode I\nStar Wars Episode II\nStar Wars Episode III";
 
         $scope.answers = "Star Wars Episode I\nStar Wars Episode II\nStar Wars Episode III";
 
