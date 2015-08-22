@@ -15,3 +15,5 @@ packages/
 #ignore files created by merge tools
 *.orig
 
+# ignore .vs folder which stores local project specific information (VS 2015)
+.vs/
