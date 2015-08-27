@@ -218,8 +218,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AngularApp\app\app.js" />
+    <Content Include="AngularApp\app\components\home\homeDetailView.html" />
     <Content Include="AngularApp\app\components\home\homeView.html" />
     <Content Include="AngularApp\app\components\home\homeController.js" />
+    <Content Include="AngularApp\app\components\home\homeDetailController.js" />
+    <Content Include="AngularApp\app\components\home\SampleController.js" />
+    <Content Include="AngularApp\app\components\home\SampleView.html" />
     <Content Include="AngularApp\app\RequireConfig.js" />
     <Content Include="AngularApp\app\shared\ckEditor.js" />
     <Content Include="AngularApp\assets\img\cool-loading-animated-gif-3.gif" />
