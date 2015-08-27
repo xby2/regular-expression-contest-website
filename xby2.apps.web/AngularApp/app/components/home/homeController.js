@@ -6,23 +6,8 @@ define(["angular",
     function (angular, moment, lodash, testRepo, activityRepo, projectRepo) {
 
     var homeController = function ($scope) {
-        /* needs review, may be better
-        $scope.problemObject = {
-            "dataPreRegex": "Star Wars\n" +
-                        "Star Wars Episode V\n" +
-                        "Star Wars Episode VI\n" +
-                        "Star Wars Episode I\n" +
-                        "Star Wars Episode II\n" +
-                        "Star Wars Episode III";
-            "answer":"String.."
-            "dataPostRegex" = function(){
-            }
-        }
-        */
-
         $scope.progress = 0;
 
-        //Sets the width of the progress bar
         $scope.setProgressBarWidth = function() {
             return {
                 "width": $scope.progress + "%"
@@ -49,7 +34,16 @@ define(["angular",
         $scope.regex="";
         
         $scope.regexChange = function () {
-            var regexInternal = new RegExp($scope.regex, 'g');
+            var regexInternal;
+
+            try {
+                regexInternal = new RegExp($scope.regex, 'g');
+            }
+            catch (e) {
+                alert('There was an error trying to construct the regular expression: '
+                    + e.message);
+            }
+
             $scope.filteredResults = $scope.problemData.match(regexInternal).toString().replace(/,/g, "\n");
             $scope.filteredResults == $scope.answers ? $scope.nextButtonDisabled = 0 : $scope.nextButtonDisabled = 1;
         };
@@ -57,12 +51,10 @@ define(["angular",
         $scope.problemMetadata = {
             "number": "1",
             "difficulty": "1",
-            "title":"Star Wars only the bad ones."
-        }
-        $scope.nextButtonDisabled = 1;
+            "title": "Star Wars only the bad ones."
+        };
+
+        $scope.nextButtonDisabled = true;
     };
     return homeController;
 });
-
-//Note that this is not defining an Angular controller yet
-//We are defining the controller logic which will be assigned to an Angular controller later
