@@ -209,6 +209,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\StartSpaController.cs" />
     <Compile Include="Controllers\RegexPuzzleController.cs" />
+    <Compile Include="Controllers\RegexValidationController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -218,16 +219,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AngularApp\app\app.js" />
-    <Content Include="AngularApp\app\components\home\homeDetailView.html" />
     <Content Include="AngularApp\app\components\home\homeView.html" />
     <Content Include="AngularApp\app\components\home\homeController.js" />
-    <Content Include="AngularApp\app\components\home\homeDetailController.js" />
     <Content Include="AngularApp\app\RequireConfig.js" />
     <Content Include="AngularApp\app\shared\ckEditor.js" />
     <Content Include="AngularApp\assets\img\cool-loading-animated-gif-3.gif" />
     <Content Include="AngularApp\assets\img\X-by-2-Logo.png" />
     <Content Include="AngularApp\Repository\BaseRepository.js" />
     <Content Include="AngularApp\Repository\testRepository.js" />
+    <Content Include="AngularApp\Repository\regexValidationRepository.js" />
     <Content Include="Content\css\AddEditActivityModal.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />

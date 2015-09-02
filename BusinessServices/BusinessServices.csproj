@@ -57,7 +57,9 @@
     <Compile Include="Contract\IRegexPuzzleService.cs" />
     <Compile Include="RegexPuzzleService.cs" />
     <Compile Include="ExampleService.cs" />
+    <Compile Include="RegexValidationService.cs" />
     <Compile Include="Contract\IExampleService.cs" />
+    <Compile Include="Contract\IRegexValidationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

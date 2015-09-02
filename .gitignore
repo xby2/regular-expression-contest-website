@@ -15,4 +15,5 @@ packages/
 #ignore files created by merge tools
 *.orig
 
-.vs/config/applicationhost.config
+# ignore .vs folder which stores local project specific information (VS 2015)
+.vs/

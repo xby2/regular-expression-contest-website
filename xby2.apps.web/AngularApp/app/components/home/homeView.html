@@ -1,6 +1,63 @@
-﻿<ul>
-    <li ng-repeat="phone in phones">
-        <span><a href="#homeDetail/{{phone.name}}">{{phone.name}}</a></span>
-        <p>{{phone.snippet}}</p>
-    </li>
-</ul>
+﻿<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="progress">
+                <div class="progress-bar" ng-style="setProgressBarWidth()">
+                    <span ng-show="progress > 0">{{progress + "%"}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>X By 2 Regular Expression Contest</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                Welcome, you will be presented with sets of data that will require a regular
+                expression to filter the text to match the goal text.  Once the regular expression
+                filters the problem data to match the goal text, you'll be able to progress to the
+                next problem.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Question {{problemMetadata.number}}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <textarea id="problemDataTextArea" disabled>{{problemData}}</textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div id="regexInput">
+                <span>Regex Input</span>
+                <input ng-change="regexChange()" ng-model="regex" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div id="filteredText">
+                <h2>Filtered Text</h2>
+                <textarea id="filteredTextArea" disabled>{{filteredResults}}</textarea>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div id="goalText">
+                <h2>Goal Text</h2>
+                <textarea id="answersTextArea" disabled>{{answers}}</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <button id="nextButton" ng-disabled="nextButtonDisabled" ng-click="updateProgress()">Next</button>
+        </div>
+    </div>
+</div>
