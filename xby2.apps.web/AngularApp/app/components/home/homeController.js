@@ -8,6 +8,52 @@ define(["angular",
         var homeController = function ($scope) {
             $scope.progress = 0;
 
+            function Puzzle(id, description, problem, goal) {
+                this.id = id
+                this.description = description;
+                this.problem = problem;
+                this.goal = goal;
+            }
+
+            function Answer(puzzleId, regex) {
+                this.puzzleId = puzzleId
+                this.regex = regex;
+            }
+
+            $scope.number = 1;
+            $scope.answers = [];
+            $scope.puzzles = [];
+            $scope.puzzles.push(new Puzzle(
+                1,
+                "Only the bad Star Wars movies.",
+                "Star Wars\nStar Wars Episode V\nStar Wars Episode VI\nStar Wars Episode I\nStar Wars Episode II\nStar Wars Episode III",
+                "Star Wars Episode I\nStar Wars Episode II\nStar Wars Episode III"
+            ))
+            $scope.puzzles.push(new Puzzle(
+                2,
+                "any re, lowercase g, any e and then any number of lowercase x",
+                "regex\nReGeX\nrEgEx\nregExxxxxx\nRegEx",
+                "regex\nrEgEx\nregExxxxx\nRegEx"
+            ))
+            $scope.puzzles.push(new Puzzle(
+                3,
+                "Any number of letters, then whitespace, then Blue (capital B enforced)",
+                "Star Wars\nStar Wars Episode V\nStar Wars Episode VI\nStar Wars Episode I\nStar Wars Episode II\nStar Wars Episode III",
+                "Star Wars Episode I\nStar Wars Episode II\nStar Wars Episode III"
+            ))
+            $scope.puzzles.push(new Puzzle(
+                4,
+                "Capital Letter and length of 8",
+                "Star Wars\nStar Wars Episode V\nStar Wars Episode VI\nStar Wars Episode I\nStar Wars Episode II\nStar Wars Episode III",
+                "Star Wars Episode I\nStar Wars Episode II\nStar Wars Episode III"
+            ))
+            $scope.puzzles.push(new Puzzle(
+                5,
+                "0101",
+                "Star Wars\nStar Wars Episode V\nStar Wars Episode VI\nStar Wars Episode I\nStar Wars Episode II\nStar Wars Episode III",
+                "Star Wars Episode I\nStar Wars Episode II\nStar Wars Episode III"
+            ))
+
             $scope.setProgressBarWidth = function () {
                 return {
                     "width": $scope.progress + "%"
@@ -15,22 +61,40 @@ define(["angular",
             };
 
             $scope.updateProgress = function () {
+                // store problem data and regex answer
+                $scope.answers.push(new Answer($scope.puzzleId, $scope.regex))
+                console.log($scope.answers)
+
                 if ($scope.progress < 100) {
                     //TODO: This number will be changed when we know the number of REGEX puzzles
-                    $scope.progress += 10;
+                    $scope.progress += 20;
                     $scope.nextButtonDisabled = 1;
+
+                    if ($scope.puzzles.length > 0)
+                    {
+                        $scope.number++;
+                        var puzzle = $scope.puzzles.shift();
+
+                        $scope.problemId = puzzle.id
+                        $scope.description = puzzle.description;
+                        $scope.problemData = puzzle.problem;
+                        $scope.answers = puzzle.goal;
+                    }
                 }
                 if ($scope.progress >= 100) {
                     //repository call
+                    alert('call the repository')
                 }
             };
 
-            $scope.problemData = "Star Wars\nStar Wars Episode V\nStar Wars Episode VI\nStar Wars Episode I\nStar Wars Episode II\nStar Wars Episode III";
+            var puzzle = $scope.puzzles.shift()
 
-            $scope.answers = "Star Wars Episode I\nStar Wars Episode II\nStar Wars Episode III";
+            $scope.puzzleId = puzzle.id
+            $scope.description = puzzle.description
+            $scope.problemData = puzzle.problem
+            $scope.answers = puzzle.goal
 
-            $scope.filteredResults = $scope.problemData;
-
+            $scope.filteredResults = "";
             $scope.regex = "";
 
             $scope.regexChange = function () {
@@ -46,12 +110,6 @@ define(["angular",
 
                 $scope.filteredResults = $scope.problemData.match(regexInternal).toString().replace(/,/g, "\n");
                 $scope.filteredResults == $scope.answers ? $scope.nextButtonDisabled = 0 : $scope.nextButtonDisabled = 1;
-            };
-
-            $scope.problemMetadata = {
-                "number": "1",
-                "difficulty": "1",
-                "title": "Star Wars only the bad ones."
             };
 
             $scope.nextButtonDisabled = true;
