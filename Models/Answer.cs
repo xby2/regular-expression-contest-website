@@ -9,7 +9,8 @@ namespace Models
 {
     public class Answer
     {
+        public int Id { get; set; }
         public string Regex { get; set; }
-        public string Substitute { get; set; }
+        public string Substitute { get { return "$1"; } }
     }
 }

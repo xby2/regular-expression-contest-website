@@ -2,6 +2,10 @@
 using DataAccess.Contract;
 using Models;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
+using System.Linq;
+using System;
 
 namespace BusinessServices
 {
@@ -24,6 +28,37 @@ namespace BusinessServices
             return regexPuzzleRepository.SubmitPuzzleResult(result);
         }
 
- 
+        public bool ValidateRegex(PuzzleAnswerDTO puzzleAnswers)
+        {
+
+            // Get the puzzles from the repository
+            var puzzleDictionary = regexPuzzleRepository.GetRegexPuzzle().ToDictionary(k => k.Id, v => v);
+
+
+            foreach (var p in puzzleAnswers.Answer) {
+                if (!puzzleDictionary.ContainsKey(p.Id)) throw new Exception("Unable to find the puzzle with the id " + p.Id);
+                var puzzle = puzzleDictionary[p.Id];
+
+                MatchCollection mc = Regex.Matches(puzzle.Problem,p.Regex, RegexOptions.Multiline);
+
+                var result = "";
+                foreach (Match m in mc)
+                {
+                    result += m.Value;
+                    result += Environment.NewLine;
+                }
+
+                // Replace \n with \r\n since the puzzle file is using \n for newline where as matched
+                // regex uses \r\n
+                var goalwithNewline = puzzle.Goal.Replace("\n", Environment.NewLine);
+
+                if (result != goalwithNewline) return false;
+
+            }
+            
+            // Sumit result
+            return true;
+        }
+
     }
 }

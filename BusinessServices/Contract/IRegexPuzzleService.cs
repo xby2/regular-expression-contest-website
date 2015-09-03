@@ -7,5 +7,6 @@ namespace BusinessServices.Contract
     {
         List<Puzzle> GetPuzzle();
         string SubmitPuzzleResult(PuzzleResult result);
+        bool ValidateRegex(PuzzleAnswerDTO puzzleAnswer);
     }
 }
