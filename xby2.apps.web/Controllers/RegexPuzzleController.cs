@@ -6,6 +6,7 @@ using System.Web.Http;
 
 namespace xby2.apps.web.Controllers
 {
+
     public class RegexPuzzleController : ApiController
     {
         private readonly IRegexPuzzleService regexPuzzleService;
@@ -35,6 +36,10 @@ namespace xby2.apps.web.Controllers
            
         }
 
-
+        [HttpPost]
+        public bool ValidateRegex([FromBody]PuzzleAnswerDTO answers)
+        {
+            return regexPuzzleService.ValidateRegex(answers);
+        }
     }
 }

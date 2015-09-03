@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PuzzleAnswerDTO.cs" />
     <Compile Include="PuzzleResult.cs" />
     <Compile Include="Answer.cs" />
     <Compile Include="Person.cs" />
