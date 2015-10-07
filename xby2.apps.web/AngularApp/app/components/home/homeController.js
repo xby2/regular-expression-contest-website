@@ -6,8 +6,6 @@ define(["angular",
     function (angular, moment, lodash, regexPuzzleRepository) {
 
         var homeController = function ($scope) {
-            $scope.progress = 0;
-
             function Puzzle(id, description, problem, goal) {
                 this.id = id;
                 this.description = description;
@@ -101,37 +99,8 @@ define(["angular",
             };
 
             /*
-            $scope.puzzles.push(new Puzzle(
-                1,
-                "Only the bad Star Wars movies.",
-                "Star Wars\nStar Wars Episode V\nStar Wars Episode VI\nStar Wars Episode I\nStar Wars Episode II\nStar Wars Episode III",
-                "Star Wars Episode I\nStar Wars Episode II\nStar Wars Episode III"
-            ))
-            $scope.puzzles.push(new Puzzle(
-                2,
-                "any re, lowercase g, any e and then any number of lowercase x",
-                "regex\nReGeX\nrEgEx\nregExxxxxx\nRegEx",
-                "regex\nrEgEx\nregExxxxx\nRegEx"
-            ))
-            $scope.puzzles.push(new Puzzle(
-                3,
-                "Any number of letters, then whitespace, then Blue (capital B enforced)",
-                "Star Wars\nStar Wars Episode V\nStar Wars Episode VI\nStar Wars Episode I\nStar Wars Episode II\nStar Wars Episode III",
-                "Star Wars Episode I\nStar Wars Episode II\nStar Wars Episode III"
-            ))
-            $scope.puzzles.push(new Puzzle(
-                4,
-                "Capital Letter and length of 8",
-                "Star Wars\nStar Wars Episode V\nStar Wars Episode VI\nStar Wars Episode I\nStar Wars Episode II\nStar Wars Episode III",
-                "Star Wars Episode I\nStar Wars Episode II\nStar Wars Episode III"
-            ))
-            $scope.puzzles.push(new Puzzle(
-                5,
-                "0101",
-                "Star Wars\nStar Wars Episode V\nStar Wars Episode VI\nStar Wars Episode I\nStar Wars Episode II\nStar Wars Episode III",
-                "Star Wars Episode I\nStar Wars Episode II\nStar Wars Episode III"
-            ))
             */
         };
+
         return homeController;
     });
