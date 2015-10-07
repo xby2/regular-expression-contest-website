@@ -227,7 +227,7 @@
     <Content Include="AngularApp\assets\img\X-by-2-Logo.png" />
     <Content Include="AngularApp\Repository\BaseRepository.js" />
     <Content Include="AngularApp\Repository\testRepository.js" />
-    <Content Include="AngularApp\Repository\regexValidationRepository.js" />
+    <Content Include="AngularApp\Repository\regexPuzzleRepository.js" />
     <Content Include="Content\css\AddEditActivityModal.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />

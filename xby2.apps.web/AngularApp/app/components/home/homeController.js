@@ -2,27 +2,34 @@
 define(["angular",
     "moment",
     "lodash",
-    "Repository/testRepository"],
-    function (angular, moment, lodash, testRepo, activityRepo, projectRepo) {
+    "Repository/regexPuzzleRepository"],
+    function (angular, moment, lodash, regexPuzzleRepository) {
 
         var homeController = function ($scope) {
             $scope.progress = 0;
 
             function Puzzle(id, description, problem, goal) {
-                this.id = id
+                this.id = id;
                 this.description = description;
                 this.problem = problem;
                 this.goal = goal;
             }
 
             function Answer(puzzleId, regex) {
-                this.puzzleId = puzzleId
+                this.puzzleId = puzzleId;
                 this.regex = regex;
             }
 
             $scope.number = 1;
             $scope.answers = [];
             $scope.puzzles = [];
+
+            regexPuzzleRepository.get()
+                .then(function (puzzles) {
+                    $scope.puzzles = puzzles;
+                });
+
+            /*
             $scope.puzzles.push(new Puzzle(
                 1,
                 "Only the bad Star Wars movies.",
@@ -53,6 +60,8 @@ define(["angular",
                 "Star Wars\nStar Wars Episode V\nStar Wars Episode VI\nStar Wars Episode I\nStar Wars Episode II\nStar Wars Episode III",
                 "Star Wars Episode I\nStar Wars Episode II\nStar Wars Episode III"
             ))
+            */
+
 
             $scope.setProgressBarWidth = function () {
                 return {
@@ -62,8 +71,8 @@ define(["angular",
 
             $scope.updateProgress = function () {
                 // store problem data and regex answer
-                $scope.answers.push(new Answer($scope.puzzleId, $scope.regex))
-                console.log($scope.answers)
+                $scope.answers.push(new Answer($scope.puzzleId, $scope.regex));
+                console.log($scope.answers);
 
                 if ($scope.progress < 100) {
                     //TODO: This number will be changed when we know the number of REGEX puzzles
@@ -75,7 +84,7 @@ define(["angular",
                         $scope.number++;
                         var puzzle = $scope.puzzles.shift();
 
-                        $scope.problemId = puzzle.id
+                        $scope.problemId = puzzle.id;
                         $scope.description = puzzle.description;
                         $scope.problemData = puzzle.problem;
                         $scope.answers = puzzle.goal;
@@ -83,16 +92,16 @@ define(["angular",
                 }
                 if ($scope.progress >= 100) {
                     //repository call
-                    alert('call the repository')
+                    alert('call the repository');
                 }
             };
 
-            var puzzle = $scope.puzzles.shift()
+            var puzzle = $scope.puzzles.shift();
 
-            $scope.puzzleId = puzzle.id
-            $scope.description = puzzle.description
-            $scope.problemData = puzzle.problem
-            $scope.answers = puzzle.goal
+            $scope.puzzleId = puzzle.id;
+            $scope.description = puzzle.description;
+            $scope.problemData = puzzle.problem;
+            $scope.answers = puzzle.goal;
 
             $scope.filteredResults = "";
             $scope.regex = "";

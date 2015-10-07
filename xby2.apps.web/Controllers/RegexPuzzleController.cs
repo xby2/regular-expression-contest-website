@@ -20,20 +20,7 @@ namespace xby2.apps.web.Controllers
         public List<Puzzle> Get()
         {
 
-            regexPuzzleService.SubmitPuzzleResult(new PuzzleResult
-            {
-                DateSubmitted = DateTime.Now,
-                Name = "Bill sun",
-                Email = "bsun@xby2.com",
-                RegexAnswers = new List<String>
-                {
-                    "asfasdf",
-                    ""
-                }
-
-            });
             return regexPuzzleService.GetPuzzle();
-           
         }
 
         [HttpPost]
