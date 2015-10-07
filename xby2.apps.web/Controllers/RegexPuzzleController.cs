@@ -19,7 +19,6 @@ namespace xby2.apps.web.Controllers
         // GET api/<controller>/get
         public List<Puzzle> Get()
         {
-
             return regexPuzzleService.GetPuzzle();
         }
 

@@ -55,8 +55,15 @@ namespace BusinessServices
                 if (result != goalwithNewline) return false;
 
             }
-            
-            // Sumit result
+
+            // Submit result
+            regexPuzzleRepository.SubmitPuzzleResult(new PuzzleResult {
+                Name = puzzleAnswers.Name,
+                DateSubmitted = DateTime.Now,
+                Email = puzzleAnswers.Email,
+                RegexAnswers = string.Join(Environment.NewLine, puzzleAnswers.Answer.Select(a => a.Regex).ToList())
+            });
+
             return true;
         }
 

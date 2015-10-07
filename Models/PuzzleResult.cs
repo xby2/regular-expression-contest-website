@@ -11,7 +11,7 @@ namespace Models
         public DateTime DateSubmitted { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public List<string> RegexAnswers { get; set; }
+        public string RegexAnswers { get; set; }
         public string ResultFile { get { return Email + ".xml"; } }
     }
 }
