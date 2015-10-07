@@ -22,11 +22,12 @@
     //@email {string} - valid email of the user
     regexPuzzleRepository.prototype.validateRegex = function (puzzlesAnswers, name, email) {
         var data = {
-            puzzlesAnswers: puzzlesAnswers,
-            name: name,
-            email: email
+            Answers: puzzlesAnswers,
+            Name: name,
+            Email: email
         };
         return baseRepository.Post("ValidateRegex", data);
     }
 
+    return new regexPuzzleRepository;
 });
